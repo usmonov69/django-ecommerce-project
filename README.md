@@ -1,6 +1,6 @@
 # django-ecommerce-project
 
-The backend (payment) part of the e-commerce store, which is done through Django, works 
+The backend (payment) part of the e-commerce store, which is done through Django, works  ☺️
 
 🔗http://ecommerce69.pythonanywhere.com/
 
