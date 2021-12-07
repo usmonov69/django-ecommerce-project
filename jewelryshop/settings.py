@@ -15,9 +15,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3%y3laftm62q0zaj+s7#p-xqq9(&#q+)s8)p-&#&bz*0$!xu$0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -114,12 +114,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'jewelryshop/static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') # Automatically Created on Production
-
-# Settings for Media
 MEDIA_URL = '/media/'
+
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'jewelryshop/static')]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
